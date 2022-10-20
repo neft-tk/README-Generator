@@ -102,7 +102,7 @@ switch (license) {
 
 
 inquirer.prompt(questions).then((response) =>
-    fs.writeFile('Readme.md', 
+    fs.writeFile('./output/Readme.md', 
 `# ${(response.title)}
 ${renderLicenseBadge(response.licenseList)}
 
