@@ -107,41 +107,34 @@ inquirer.prompt(questions).then((response) =>
 ${renderLicenseBadge(response.licenseList)}
 
 ## Table of Contents
-[Description](#description)
-[Installation](#installation)
-[Usage](#usage)
-[License](#license)
-[Contributing](#contributing)
-[Tests](#tests)
-[Questions](#questions)
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
-<a name="description/>
-## Description
+
+## Description <a name="description"></a>
 ${(response.description)}
 
-
-<a name="installation"/>
-## Installation
+## Installation <a name="installation"></a>
 ${(response.instructions)}
 
-<a name="usage"/>
-## Usage
+## Usage <a name="usage"></a>
 ${(response.usage)}
 
-<a name="license"/>
-## License
+## License <a name="license"></a>
 This project is licensed under the ${(response.licenseList)}
 
-<a name="contributing"/>
-## Contributing
+## Contributing <a name="contributing"></a>
 ${(response.contributions)}
 
-<a name="tests"/>
-## Tests
+## Tests <a name="tests"></a>
 ${(response.testInstructions)}
 
-<a name="questions"/>
-## Questions
+## Questions <a name="questions"></a>
 My GitHub username is ${(response.username)}, and you can see more of my work at https://github.com/${(response.username)} 
 You can also reach me at ${(response.email)}`,  (err) =>
       err ? console.error(err) : console.log('Generating README...')
