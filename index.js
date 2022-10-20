@@ -1,7 +1,6 @@
 // Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
 
 // Create an array of questions for user input
 const questions = [
@@ -102,7 +101,6 @@ switch (license) {
 
 
 
-// TODO: Create a function to write README file
 inquirer.prompt(questions).then((response) =>
     fs.writeFile('Readme.md', 
 `# ${(response.title)}
@@ -110,6 +108,16 @@ ${renderLicenseBadge(response.licenseList)}
     
 ## Description
 ${(response.description)}
+
+## Table of Contents
+* Description
+* Installation
+* Usage
+* License
+* Contributing
+* Tests
+* Questions
+{:toc}
     
 ## Installation
 ${(response.instructions)}
@@ -118,7 +126,7 @@ ${(response.instructions)}
 ${(response.usage)}
 
 ## License
-${(response.licenseList)}
+This project is licensed under the ${(response.licenseList)}
 
 ## Contributing
 ${(response.contributions)}
@@ -129,12 +137,7 @@ ${(response.testInstructions)}
 ## Questions
 My GitHub username is ${(response.username)}, and you can see more of my work at https://github.com/${(response.username)} 
 You can also reach me at ${(response.email)}`,  (err) =>
-      err ? console.error(err) : console.log('Commit logged!')
+      err ? console.error(err) : console.log('Generating README...')
     ));;
 
 
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
