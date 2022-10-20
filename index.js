@@ -106,10 +106,6 @@ inquirer.prompt(questions).then((response) =>
 `# ${(response.title)}
 ${renderLicenseBadge(response.licenseList)}
 
-<a name="description/>
-## Description
-${(response.description)}
-
 ## Table of Contents
 [Description](#description)
 [Installation](#installation)
@@ -118,6 +114,11 @@ ${(response.description)}
 [Contributing](#contributing)
 [Tests](#tests)
 [Questions](#questions)
+
+<a name="description/>
+## Description
+${(response.description)}
+
 
 <a name="installation"/>
 ## Installation
