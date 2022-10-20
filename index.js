@@ -105,35 +105,41 @@ inquirer.prompt(questions).then((response) =>
     fs.writeFile('Readme.md', 
 `# ${(response.title)}
 ${renderLicenseBadge(response.licenseList)}
-    
+
+<a name="description/>
 ## Description
 ${(response.description)}
 
 ## Table of Contents
-* Description
-* Installation
-* Usage
-* License
-* Contributing
-* Tests
-* Questions
-{:toc}
-    
+[Description](#description)
+[Installation](#installation)
+[Usage](#usage)
+[License](#license)
+[Contributing](#contributing)
+[Tests](#tests)
+[Questions](#questions)
+
+<a name="installation"/>
 ## Installation
 ${(response.instructions)}
 
+<a name="usage"/>
 ## Usage
 ${(response.usage)}
 
+<a name="license"/>
 ## License
 This project is licensed under the ${(response.licenseList)}
 
+<a name="contributing"/>
 ## Contributing
 ${(response.contributions)}
 
+<a name="tests"/>
 ## Tests
 ${(response.testInstructions)}
 
+<a name="questions"/>
 ## Questions
 My GitHub username is ${(response.username)}, and you can see more of my work at https://github.com/${(response.username)} 
 You can also reach me at ${(response.email)}`,  (err) =>
